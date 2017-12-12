@@ -11,14 +11,14 @@ public class Earthquake {
 
     private String mLocation;
 
-    private String mTime;
+    private String mDate;
 
 
-    public Earthquake (String magnitude, String location, String time){
+    public Earthquake (String magnitude, String location, String date){
 
         mMagnitude = magnitude;
         mLocation = location;
-        mTime = time;
+        mDate = date;
 
     }
 
@@ -30,7 +30,7 @@ public class Earthquake {
         return mLocation;
     }
 
-    public String getTime () {
-        return mTime;
+    public String getDate () {
+        return mDate;
     }
 }

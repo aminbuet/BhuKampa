@@ -51,7 +51,7 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
         TextView timeTextView = listItemView.findViewById(R.id.time_display);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        timeTextView.setText(currentEarthquake.getTime());
+        timeTextView.setText(currentEarthquake.getDate());
 
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
