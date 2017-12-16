@@ -104,6 +104,9 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
         return listItemView;
     }
 
+    /**
+     * Return the colored circle of magnitude.
+     */
     private int getMagnitudeColor(double magnitude) {
         int magnitudeColorResourceId;
         int magnitudeFloor = (int) Math.floor( magnitude );
