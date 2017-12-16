@@ -12,6 +12,7 @@
 -->
 <!-- Layout for a single list item -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools= "http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
@@ -20,22 +21,32 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/magnitude_display"
+        android:id="@+id/magnitude"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        tools:text="8.9"/>
 
     <TextView
-        android:id="@+id/location_display"
+        android:id="@+id/location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        tools:text="Sydney"/>
 
     <TextView
-        android:id="@+id/time_display"
+        android:id="@+id/date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        tools:text="Mar 6, 2010"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00 PM"/>
 
 
 </LinearLayout>
