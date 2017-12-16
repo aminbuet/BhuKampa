@@ -64,18 +64,15 @@ public class QueryUtils {
                 double magnitude = properties.getDouble( "mag" );
                 String location = properties.getString( "place" );
                 long time = properties.getLong( "time" );
+                String url = properties.getString( "url" );
 
                 //Create Earthquake object
-                Earthquake earthquake = new Earthquake( magnitude, location, time );
+                Earthquake earthquake = new Earthquake( magnitude, location, time, url);
 
                 //Add to the ArrayList
                 earthquakes.add( earthquake );
 
-
-
             }
-
-
 
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
