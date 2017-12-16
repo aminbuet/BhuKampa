@@ -7,7 +7,7 @@ package com.azan.android.bhukampa;
 
 public class Earthquake {
 
-    private String mMagnitude;
+    private double mMagnitude;
 
     private String mLocation;
 
@@ -22,7 +22,7 @@ public class Earthquake {
      * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
      *  earthquake happened
      */
-    public Earthquake (String magnitude, String location, long timeInMilliseconds){
+    public Earthquake (double magnitude, String location, long timeInMilliseconds){
 
         mMagnitude = magnitude;
         mLocation = location;
@@ -30,7 +30,7 @@ public class Earthquake {
 
     }
 
-    public String getMagnitude() {
+    public double getMagnitude() {
         return mMagnitude;
     }
 
