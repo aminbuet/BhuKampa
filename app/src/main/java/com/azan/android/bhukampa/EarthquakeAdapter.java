@@ -20,6 +20,8 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
 
     private static final String LOG_TAG = EarthquakeAdapter.class.getSimpleName();
 
+    private static  final String LOCATION_SEPARATOR = " of ";
+
     public EarthquakeAdapter(Activity context, ArrayList <Earthquake> earthquakes){
         super(context, 0, earthquakes);
 
@@ -42,10 +44,29 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
         // Display magnitude
         magnitudeTextView.setText(currentEarthquake.getMagnitude());
 
-        // Find the TextView in the list_item.xml layout with the ID location
-        TextView locationTextView = listItemView.findViewById(R.id.location);
+        // Create new string for location
+        String originalLocation = currentEarthquake.getLocation();
+        String primaryLocation;
+        String locationOffset;
+
+        if (originalLocation.contains( LOCATION_SEPARATOR )){
+            String [] parts = originalLocation.split( LOCATION_SEPARATOR );
+            locationOffset = parts [0] + LOCATION_SEPARATOR;
+            primaryLocation = parts [1];
+        } else {
+            locationOffset = getContext().getString( R.string.near_the );
+            primaryLocation = originalLocation;
+        }
+
+        // Find the TextView in the list_item.xml layout with the ID of primary location
+        TextView primaryLocationView = listItemView.findViewById(R.id.location_primary);
         // Display location
-        locationTextView.setText(currentEarthquake.getLocation());
+        primaryLocationView.setText(primaryLocation);
+
+        // Find the TextView in the list_item.xml layout with the ID of offset location
+        TextView offsetLocationView = listItemView.findViewById(R.id.location_offset);
+        // Display location
+        offsetLocationView.setText(locationOffset);
 
         //Create a new Date object from the time in milliseconds of the earthquake
         Date dateObject = new Date( currentEarthquake.getTimeInMilliseconds() );
